@@ -1,0 +1,24 @@
+{
+  "name": "time-trigger",
+  "version": "1.0.0",
+  "description": "TimeTrigger, send events \"newSec\", \"newMinute\", \"newHour\", \"newDate\", \"newWeek\", \"newMonth\", \"newYear\"",
+  "main": "TimeTrigger.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WhiteMinds/TimeTrigger.git"
+  },
+  "keywords": [
+    "time",
+    "trigger",
+    "event"
+  ],
+  "author": "WhiteMind",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WhiteMinds/TimeTrigger/issues"
+  },
+  "homepage": "https://github.com/WhiteMinds/TimeTrigger#readme"
+}

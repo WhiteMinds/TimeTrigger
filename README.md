@@ -3,13 +3,28 @@ Javascript TimeTrigger, send events "newSec", "newMinute", "newHour", "newDate",
 
 # Test code
 ```javascript
-trigger = require("TimeTrigger")();
+Date.prototype.format = function (fmt) {
+    let o = {
+        "M+": this.getMonth() + 1,
+        "d+": this.getDate(),
+        "h+": this.getHours(),
+        "m+": this.getMinutes(),
+        "s+": this.getSeconds(),
+        "q+": Math.floor((this.getMonth() + 3) / 3),
+        "S": this.getMilliseconds()
+    };
+    if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+    for (let k in o)
+        if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length === 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+    return fmt;
+};
+
+let trigger = require("time-trigger")();
+
 let arr = ["newSec", "newMinute", "newHour", "newDate", "newWeek", "newMonth", "newYear"];
 for(let i in arr){
-    (function (m) {
-        trigger.on(m, function (date) {
-            console.log(m, date.format("hh:mm:ss"));
-        });
+    (function (event) {
+        trigger.on(event, date => console.log(event, date.format("hh:mm:ss")));
     })(arr[i]);
 }
 ```

@@ -1,6 +1,6 @@
 {
   "name": "time-trigger",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "TimeTrigger, send events \"newSec\", \"newMinute\", \"newHour\", \"newDate\", \"newWeek\", \"newMonth\", \"newYear\"",
   "main": "TimeTrigger.js",
   "scripts": {
